@@ -1,3 +1,5 @@
+package com.epam.controllers;
+
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.springframework.boot.SpringApplication;

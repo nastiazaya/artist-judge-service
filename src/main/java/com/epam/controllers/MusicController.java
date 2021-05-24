@@ -1,3 +1,5 @@
+package com.epam.controllers;
+
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +14,8 @@ import java.util.stream.Collectors;
 public class MusicController {
     @Autowired
     private JavaSparkContext sc;
-    @GetMapping
+    @GetMapping("/topx")
     public List<String> topX(String pathToData, int x) {
-        //todo finish it
         JavaRDD<String> stringJavaRDD = sc.textFile(pathToData);
         return stringJavaRDD.flatMap(string -> Arrays.asList(string.split(" "))
                 .iterator())
